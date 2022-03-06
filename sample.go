@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"github.com/gofiber/fiber/v2"
-	uuid "overflow-uint8/go.uuid"
 )
 
 func main() {
@@ -20,9 +19,5 @@ func main() {
 	app.Get("/", func(c *fiber.Ctx) error {
 		return c.SendString("Hello, World 👋!")
 	})
-
-	u1 := uuid.Must(uuid.NewV4())
-	fmt.Printf("UUIDv4: %s\n", u1)
-
 	app.Listen(":3000")
 }
